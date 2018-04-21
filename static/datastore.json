@@ -1,0 +1,142 @@
+{
+    "flights": {},
+    "bags": {
+        "headKPI": {
+            "kpi1": 152,
+            "kpi2": 1520,
+            "kpi3": 2520,
+            "kpi4": 352,
+            "kpi5": 5052,
+            "kpi6": 6752
+        },
+        "bagFlow": {
+            "nodes": [
+                {
+                    "id": 0,
+                    "name": "TR01",
+                    "color": "#fff"
+                },
+                {
+                    "id": 1,
+                    "name": "TR02",
+                    "color": "#fff"
+                },
+                {
+                    "id": 2,
+                    "name": "TR03",
+                    "color": "#fff"
+                },
+                {
+                    "id": 3,
+                    "name": "TR04",
+                    "color": "#fff"
+                },
+                {
+                    "id": 4,
+                    "name": "TR05",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100,
+                    "name": "CA",
+                    "color": "#fff"
+                },
+                {
+                    "id": 101,
+                    "name": "CB",
+                    "color": "#fff"
+                },
+                {
+                    "id": 102,
+                    "name": "CC",
+                    "color": "#fff"
+                },
+                {
+                    "id": 1000,
+                    "name": "EBS",
+                    "color": "#fff"
+                },
+                {
+                    "id": 1001,
+                    "name": "EnRoute",
+                    "color": "#fff"
+                },
+                {
+                    "id": 10000,
+                    "name": "CA",
+                    "color": "#fff"
+                },
+                {
+                    "id": 10001,
+                    "name": "CB",
+                    "color": "#fff"
+                },
+                {
+                    "id": 10002,
+                    "name": "CC",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100000,
+                    "name": "MA01-10",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100001,
+                    "name": "MA11-20",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100002,
+                    "name": "MA21-30",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100003,
+                    "name": "MA31-40",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100004,
+                    "name": "MA41-50",
+                    "color": "#fff"
+                },
+                {
+                    "id": 100005,
+                    "name": "MA51-60",
+                    "color": "#fff"
+                }
+            ],
+            "links": [
+                {
+                    "src": "TR01",
+                    "dst": "CA",
+                    "value": 1
+                },
+                {
+                    "src": "TR02",
+                    "dst": "CA",
+                    "value": 1
+                },
+                {
+                    "src": "TR03",
+                    "dst": "CB",
+                    "value": 1
+                },
+                {
+                    "src": "TR04",
+                    "dst": "CC",
+                    "value": 1
+                },
+                {
+                    "src": "TR05",
+                    "dst": "CC",
+                    "value": 1
+                }
+
+            ]
+
+        }
+    },
+    "pax": {}
+}
