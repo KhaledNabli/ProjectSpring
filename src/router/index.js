@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+
+import HomeScreen from '@/components/HomeScreen'
+import AirportIntelligenceIndex from '@/components/AirportIntelligenceIndex'
 import FlightOpsIndex from '@/components/FlightOpsIndex'
 import BagHandlingIndex from '@/components/BagHandlingIndex'
 
@@ -9,23 +13,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'FlightOpsIndex',
-      component: FlightOpsIndex
+      name: 'home-screen',
+      component: HomeScreen
     },
     {
-      path: '/flight-ops',
-      name: 'FlightOpsIndex',
-      component: FlightOpsIndex
+      path: '/AirportIntelligence',
+      name: 'AirportIntelligence',
+      component: AirportIntelligenceIndex,
+      children: [
+        {
+          path: 'flight-ops',
+          component: FlightOpsIndex
+        },
+        {
+          path: 'baggage-handling',
+          name: "baggage-handling",
+          component: BagHandlingIndex
+        },
+      ]
     },
-    {
-      path: '/baggage-handling',
-      name: 'BagHandlingIndex',
-      component: BagHandlingIndex
-    },
-    {
-      path: '/passenger-flow',
-      name: 'FlightOpsIndex',
-      component: FlightOpsIndex
-    }
   ]
 })

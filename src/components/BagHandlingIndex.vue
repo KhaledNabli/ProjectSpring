@@ -6,21 +6,15 @@
   <v-container fluid>
       <v-layout row wrap>
         <v-flex xs12>
-<MultiLineChart ></MultiLineChart>
-<Sankey ></Sankey>
-<v-slider v-model="forecastSlider" step="1" min="-3" max="+12" ticks></v-slider>
+          <MultiLineChart ></MultiLineChart>
+          <Sankey ></Sankey>
+          <v-slider v-model="forecastSlider" step="1" min="-3" max="+12" ticks></v-slider>
         </v-flex>
       </v-layout>
 
       <v-layout row wrap>
         <v-flex xs12 md6 xl6>
           <BarChart ></BarChart>
-          
-          
-
-
-      
-
         </v-flex>
         <v-flex xs12 md6 xl6>
           <BarChart ></BarChart>
@@ -28,24 +22,20 @@
       </v-layout>
       <v-layout row wrap>
         <v-flex>
-
-<v-data-table
+        <v-data-table
           :headers="headers"
           :items="items"
           :loading="true"
-          hide-actions
-        >
+          hide-actions >
           <template slot="items" slot-scope="props">
-            <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.calories }}</td>
-            <td class="text-xs-right">{{ props.item.carbs }}</td>
+              <td>{{ props.item.name }}</td>
+              <td class="text-xs-right">{{ props.item.calories }}</td>
+              <td class="text-xs-right">{{ props.item.carbs }}</td>
           </template>
         </v-data-table>
-
         </v-flex>
       </v-layout>
   </v-container>
-
 </div>
 </template>
 
@@ -149,7 +139,9 @@ export default {
         value: "17:00",
         change: 0.2,
         changeText: "above limit",
-        formattedValue: function(val) {return "00:" + val + ":00"}
+        formattedValue: function(val) {
+          return "00:" + val + ":00";
+        }
       },
       {
         id: 1,
@@ -196,7 +188,7 @@ export default {
   props: {
     source: String
   },
-  components: { KPITile, Sankey, BarChart,MultiLineChart },
+  components: { KPITile, Sankey, BarChart, MultiLineChart },
   mounted: function() {
     this.timer = window.setInterval(() => {
       /*

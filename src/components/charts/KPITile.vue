@@ -24,45 +24,44 @@
 </template>
 
 <style scoped>
+    .tile_count {
+        margin-top: 0px;
+    }
+    .tile_stats_count {
+        margin-bottom: 10px;
+        border-bottom: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        border-left: 3px dotted lightgray;
 
-.tile_count {
-    margin-top: 0px;
-}
-.tile_stats_count {
-    margin-bottom: 10px;
-    border-bottom: 0;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border-left: 3px dotted lightgray;
+    }
 
-}
+    .tile_stats_count :first {
+        margin-bottom: 10px;
+        border-bottom: 0;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        border-left: 0px dotted lightgray;
+    }
 
-.tile_stats_count :first {
-    margin-bottom: 10px;
-    border-bottom: 0;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border-left: 0px dotted lightgray;
-}
+    .tile_stats_count > span {
+        font-size: 13px;
+    }
 
-.tile_stats_count > span {
-    font-size: 13px;
-}
+    .count {
+        font-size: 40px;
+        line-height: 47px;
+        font-weight: 600;
+        text-shadow: 3px 2px 3px #fff
+    }
 
-.count {
-    font-size: 40px;
-    line-height: 47px;
-    font-weight: 600;
-    text-shadow: 3px 2px 3px #fff
-}
+    .green-text {
+        color: #1ABB9C;
+    }
 
-.green-text {
-    color: #1ABB9C;
-}
-
-.red-text {
-    color: #E74EC3;
-}
+    .red-text {
+        color: #E74EC3;
+    }
 </style>
 
 
@@ -80,6 +79,6 @@
         data: () => ({
             timer: ""
         }),
-        props: ["kpiPanels"]
+        props: ["kpiPanels", "kpi-data"]
     };
 </script>
