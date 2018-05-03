@@ -1,7 +1,7 @@
 <template>
 <div>
     <KPITile :kpiPanels="headKPIs" ></KPITile>
-    <Gauge :kpiPanels="headKPIs" ></Gauge>
+
 
 </div>
 </template>

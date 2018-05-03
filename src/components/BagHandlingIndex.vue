@@ -7,7 +7,7 @@
       <v-layout row wrap>
         <v-flex xs12>
           <MultiLineChart ></MultiLineChart>
-          <Sankey ></Sankey>
+          <Sankey :dataObj="sankeyDiagram.links"></Sankey>
           <v-slider v-model="forecastSlider" step="1" min="-3" max="+12" ticks></v-slider>
         </v-flex>
       </v-layout>
@@ -23,8 +23,8 @@
       <v-layout row wrap>
         <v-flex>
         <v-data-table
-          :headers="headers"
-          :items="items"
+          :headers="dataTable.headers"
+          :items="dataTable.items"
           :loading="true"
           hide-actions >
           <template slot="items" slot-scope="props">
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+
 import KPITile from "@/components/charts/KPITile";
 import Sankey from "@/components/charts/Sankey";
 import BarChart from "@/components/charts/BarChart";
@@ -49,7 +50,79 @@ export default {
   data: () => ({
     forecastSlider: 0,
     drawer: false,
-    headers: [
+    sankeyDiagram: {
+      links: [
+        { source: "T1", target: "CB", value: 100, color: "#0f0" },
+        { source: "T2", target: "CB", value: 100 },
+        { source: "T3", target: "CB", value: 100 },
+        { source: "T4", target: "CB", value: 100 },
+        { source: "T5", target: "CB", value: 100 },
+        { source: "T6", target: "CB", value: 100 },
+        { source: "T7", target: "CB", value: 100 },
+        { source: "T8", target: "CB", value: 100 },
+        { source: "T9", target: "CB", value: 100 },
+        { source: "T10", target: "CB", value: 100 },
+        { source: "T11", target: "CB", value: 100 },
+        { source: "T12", target: "CB", value: 100 },
+        { source: "T21", target: "CA", value: 100 },
+        { source: "T22", target: "CA", value: 100 },
+        { source: "T23", target: "CA", value: 100 },
+        { source: "T24", target: "CA", value: 100 },
+        { source: "T25", target: "CA", value: 100 },
+        { source: "T26", target: "CA", value: 100 },
+        { source: "T27", target: "CA", value: 100 },
+        { source: "T28", target: "CA", value: 100 },
+        { source: "T29", target: "CA", value: 100 },
+        { source: "T30", target: "CA", value: 100 },
+        { source: "T31", target: "CA", value: 100 },
+        { source: "T32", target: "CA", value: 100 },
+        { source: "E1", target: "CC", value: 200 },
+        { source: "E2", target: "CC", value: 200 },
+        { source: "E3", target: "CC", value: 200 },
+        { source: "W1", target: "CC", value: 200 },
+        { source: "W2", target: "CC", value: 200 },
+        { source: "W3", target: "CC", value: 200 },
+        { source: "CA", target: "EBS", value: 800 },
+        { source: "CB", target: "EBS", value: 900 },
+        { source: "CC", target: "EBS", value: 1000 },
+        { source: "CA", target: "En-Route", value: 400 },
+        { source: "CB", target: "En-Route", value: 300 },
+        { source: "CC", target: "En-Route", value: 200 },
+        { source: "EBS", target: " CA", value: 1000 },
+        { source: "EBS", target: " CB", value: 900 },
+        { source: "EBS", target: " CC", value: 800 },
+        { source: "En-Route", target: " CA", value: 300 },
+        { source: "En-Route", target: " CB", value: 300 },
+        { source: "En-Route", target: " CC", value: 300 },
+        { target: "P01", source: " CB", value: 100 },
+        { target: "P02", source: " CB", value: 100 },
+        { target: "Q01", source: " CB", value: 100 },
+        { target: "Q02", source: " CB", value: 100 },
+        { target: "C01 - 05", source: " CB", value: 100 },
+        { target: "C06 - 10", source: " CB", value: 100 },
+        { target: "C11 - 15", source: " CB", value: 150 },
+        { target: "C16 - 21", source: " CB", value: 150 },
+        { target: "W2 SR", source: " CB", value: 100 },
+        { target: "E2 SR", source: " CB", value: 200 },
+        { target: "C31 - 43", source: " CA", value: 250 },
+        { target: "C44 - 58", source: " CA", value: 250 },
+        { target: "P03", source: " CA", value: 100 },
+        { target: "P04", source: " CA", value: 100 },
+        { target: "Q03 - 05", source: " CA", value: 100 },
+        { target: "Q06 - 07", source: " CA", value: 100 },
+        { target: "W3 SR", source: " CA", value: 200 },
+        { target: "E3 SR", source: " CA", value: 200 },
+        { target: "C71 - 73", source: " CC", value: 800 },
+        { target: "BL01", source: " CC", value: 25 },
+        { target: "BL02", source: " CC", value: 25 },
+        { target: "BL03", source: " CC", value: 25 },
+        { target: "BL04", source: " CC", value: 25 },
+        { target: "C74 - 76", source: " CC", value: 100 },
+        { target: "BL05 - 06", source: " CC", value: 100 }
+      ]
+    },
+    dataTable: {
+headers: [
       {
         text: "FLIGHT",
         align: "left",
@@ -130,12 +203,14 @@ export default {
         fat: 26.0,
         carbs: 65
       }
-    ],
+    ]
+    }
+    ,
     headKPIs: [
       {
         id: 0,
         icon: "fas fa-stopwatch",
-        title: "Travel Time",
+        title: "Processing Time",
         value: "17:00",
         change: 0.2,
         changeText: "above limit",
@@ -186,9 +261,8 @@ export default {
     ]
   }),
   props: {
-    source: String
   },
-  components: { KPITile, Sankey, BarChart, MultiLineChart },
+  components: { KPITile, BarChart, Sankey, MultiLineChart },
   mounted: function() {
     this.timer = window.setInterval(() => {
       /*
@@ -210,12 +284,6 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style scoped>
-
-</style>
 
 
 

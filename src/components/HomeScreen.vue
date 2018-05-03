@@ -2,11 +2,11 @@
 <v-app>
   <div
     id="e3"
-    style="margin: auto; max-width:900px;"
+    style="margin: auto; max-width:1100px;"
     class="grey lighten-3"
   >
     <v-toolbar color="primary">
-      <v-toolbar-side-icon ></v-toolbar-side-icon>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title class="white--text">MindSphere App Launcher</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon disabled="">
@@ -23,7 +23,7 @@
         
           <v-flex xs6>
             <v-card color="primary lighten-1" class="white--text" >
-                <v-card-media src="static/img/aerodrom-rijeka-2-2.jpg" height="200px">
+                <v-card-media src="static/img/aerodrom-rijeka-2-2.jpg" height="150px">
                     <v-container fill-height fluid>
                         <v-layout fill-height>
                         <v-flex xs12 align-end flexbox>
@@ -32,7 +32,7 @@
                         </v-layout>
                     </v-container>
                 </v-card-media>
-              <v-card-title primary-title style="min-height:120px;" >
+              <v-card-title primary-title style="min-height:115px;" >
                   <span class="headline">Airport Intelligence</span>
                 <span>Measure and understand all acivities around your airport.</span>
               </v-card-title>
@@ -45,7 +45,7 @@
 
           <v-flex xs6>
             <v-card color="primary lighten-2" class="dark--text" >
-                <v-card-media src="static/img/pax-exprience.jpg" height="200px">
+                <v-card-media src="static/img/pax-exprience.jpg" height="150px">
                     <v-container fill-height fluid>
                         <v-layout fill-height>
                         <v-flex xs12 align-end flexbox>
@@ -54,7 +54,7 @@
                         </v-layout>
                     </v-container>
                 </v-card-media>
-              <v-card-title primary-title  style="min-height:120px;" >
+              <v-card-title primary-title  style="min-height:115px;" >
                   <span class="headline">Passenger Flow Management</span>
                 <div>Understand and manage all acivities around your passenger flow and their experience.</div>
               </v-card-title>
@@ -84,7 +84,7 @@
                 <div>Connect various data sources into a managed platform.</div>
               </v-card-title>
               <v-card-actions>
-                <v-btn  disabled >Launch</v-btn>
+                <v-btn disabled > Launch </v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -95,7 +95,7 @@
                   <v-flex xs7>
                       <v-card-title primary-title>
                         <div class="headline">DataHub for Airports</div>
-                        <div>Connect various data sources into a managed platform.</div>
+                        <div> Connect various data sources into a managed platform. </div>
                     </v-card-title>
                   </v-flex>
                 </v-layout>

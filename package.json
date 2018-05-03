@@ -1,7 +1,7 @@
 {
   "name": "digitalairport",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "",
   "author": "Khaled Nabli",
   "private": true,
   "scripts": {
@@ -20,7 +20,6 @@
     "sass-loader": "^6.0.7",
     "vue": "^2.5.2",
     "vue-echarts": "^3.0.5",
-    "vue-echarts-v3": "^1.0.19",
     "vue-router": "^3.0.1",
     "vuetify": "^1.0.6"
   },
@@ -106,5 +105,13 @@
   "directories": {
     "test": "test"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanab85/ProjectSpring.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khanab85/ProjectSpring/issues"
+  },
+  "homepage": "https://github.com/khanab85/ProjectSpring#readme"
 }

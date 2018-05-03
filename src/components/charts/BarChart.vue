@@ -1,10 +1,16 @@
 <template>
-<div style="height: 500px; width:100%">
+<div ref="echarts">
     <ECharts :options="option" auto-resize></ECharts>
 </div>
 </template>
 
 
+<style scoped>
+.echarts {
+  min-height: 420px;
+  width: 100%; 
+}
+</style>
 
 <script>
 

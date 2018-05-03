@@ -30,12 +30,38 @@
 
 
 <script>
+import { EventBus } from '@/event-bus.js';
+
 export default {
-    props: ["navigationTitle", "navigationItems", "displayDrawerInitial"],
-    data: () => {
+    props: ["navigationTitle", "navigationItems"],
+    data: function() {
         return {
             displayDrawer: true
         }
+    },
+    mounted: function() {
+        let self = this;
+        EventBus.$on('navigation-drawer-toggle', () => {
+            self.toggleDrawer();
+        });
+        EventBus.$on('navigation-drawer-show', () => {
+            self.showDrawer();
+        });
+        EventBus.$on('navigation-drawer-hide', () => {
+            self.hideDrawer();
+        });
+    },
+    methods: { 
+        toggleDrawer: function () {
+            this.displayDrawer = !this.displayDrawer;
+        },
+        showDrawer: function() {
+            this.displayDrawer = true;
+        },
+        hideDrawer: function() {
+            this.displayDrawer = false;
+        }
+
     }
 }
 </script>
