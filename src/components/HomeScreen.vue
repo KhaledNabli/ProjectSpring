@@ -2,12 +2,12 @@
 <v-app>
   <div
     id="e3"
-    style="margin: auto; max-width:1100px;"
+    style="margin: auto; max-width:900px;"
     class="grey lighten-3"
   >
     <v-toolbar color="primary">
       <v-toolbar-side-icon></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">MindSphere App Launcher</v-toolbar-title>
+      <v-toolbar-title class="white--text">Siemens Digital Airport</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon disabled="">
         <v-icon>search</v-icon>
@@ -55,7 +55,7 @@
                     </v-container>
                 </v-card-media>
               <v-card-title primary-title  style="min-height:115px;" >
-                  <span class="headline">Passenger Flow Management</span>
+                  <span class="headline">Passenger Journey Management</span>
                 <div>Understand and manage all acivities around your passenger flow and their experience.</div>
               </v-card-title>
               <v-card-actions>
@@ -95,13 +95,13 @@
                   <v-flex xs7>
                       <v-card-title primary-title>
                         <div class="headline">DataHub for Airports</div>
-                        <div> Connect various data sources into a managed platform. </div>
+                        <div> Connect various data sources into a managed platform. Manage your data quality and privacy. Distribute your data to your different stakeholds with state of the art API technology. </div>
                     </v-card-title>
                   </v-flex>
                 </v-layout>
               
               <v-card-actions>
-                <v-btn >Launch</v-btn>
+                <v-btn :to="{'name': 'DataHub'}" >Launch</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>

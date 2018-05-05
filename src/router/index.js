@@ -3,9 +3,20 @@ import Router from 'vue-router'
 
 import UnderConstruction from '@/components/UnderConstruction'
 import HomeScreen from '@/components/HomeScreen'
+
+import DataHubIndex from '@/components/DataHubIndex'
+
+
 import AirportIntelligenceIndex from '@/components/AirportIntelligenceIndex'
 import FlightOpsIndex from '@/components/FlightOpsIndex'
 import BagHandlingIndex from '@/components/BagHandlingIndex'
+import PassengerFlowIndex from '@/components/PassengerFlowIndex'
+import TrafficManagementIndex from '@/components/TrafficManagementIndex'
+import FacilitiesIndex from '@/components/FacilitiesIndex'
+import EnergyManagementIndex from '@/components/EnergyManagementIndex'
+import PredictiveMaintenanceIndex from '@/components/PredictiveMaintenanceIndex'
+import CybersecurityIndex from '@/components/CybersecurityIndex'
+
 
 Vue.use(Router)
 
@@ -15,6 +26,11 @@ export default new Router({
       path: '/',
       name: 'home-screen',
       component: HomeScreen
+    },
+    {
+      path: '/datahub',
+      name: 'DataHub',
+      component: DataHubIndex
     },
     {
       path: '/AirportIntelligence',
@@ -29,7 +45,7 @@ export default new Router({
         {
           path: 'passenger-flow',
           name: "passenger-flow",
-          component: UnderConstruction
+          component: PassengerFlowIndex
         },
         {
           path: 'baggage-handling',
@@ -39,22 +55,27 @@ export default new Router({
         {
           path: 'traffic-management',
           name: "traffic-management",
-          component: UnderConstruction
+          component: TrafficManagementIndex
         },
         {
           path: 'shops-food',
           name: "shops-food",
-          component: UnderConstruction
+          component: FacilitiesIndex
         },
         {
           path: 'predictive-maintenance',
           name: "predictive-maintenance",
-          component: UnderConstruction
+          component: PredictiveMaintenanceIndex
         },
         {
           path: 'energy-management',
           name: "energy-management",
-          component: UnderConstruction
+          component: EnergyManagementIndex
+        },
+        {
+          path: 'cybersecurity',
+          name: "cybersecurity",
+          component: CybersecurityIndex
         },
       ]
       

@@ -7,24 +7,22 @@
 
 <style scoped>
 .echarts {
-  min-height: 900px;
+  min-height: 500px;
   width: 100%;
 }
 </style>
 
 <script>
 import ECharts from 'vue-echarts/components/ECharts'
-import 'echarts/lib/chart/sankey'
-import 'echarts/lib/component/tooltip'
-import 'echarts/lib/component/legend'
+import 'echarts'
 
 export default {
   components: { ECharts },
   props: ["dataObj"],
   mounted: function() {
-    this.loading = false;
+    this.loading = true;
     this.timer = window.setInterval(() => {
-      
+      this.loading = false;
 
     }, 5000);
   },

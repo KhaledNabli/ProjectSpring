@@ -23,54 +23,54 @@ export default {
     search: false,
     notifications: 5,
     appTitle: "Siemens Digital Airport",
-    navigationTitle: "Airport Intelligence",
+    navigationTitle: "DataHub Sources",
     items: [
       {
         id: "flight-ops",
         icon: "flight_takeoff",
-        text: "Flight Operations",
+        text: "Flight Management",
         link: { name: "flight-ops" }
       },
       {
         id: "passenger-flow",
         icon: "transfer_within_a_station",
-        text: "Passenger Flow",
+        text: "SITA BMS",
         link: { name: "passenger-flow" }
       },
       {
         id: "baggage-handling",
         icon: "work",
-        text: "Baggage Handling",
+        text: "Siemens BHS",
         link: { name: "baggage-handling" }
       },
       {
         id: "traffic-management",
         icon: "traffic",
-        text: "Traffic Management",
+        text: "OTIS",
         link: { name: "traffic-management" }
       },
       {
         id: "shops-food",
         icon: "store",
-        text: "Facilities and Services",
+        text: "BOSCH",
         link: { name: "shops-food" }
       },
       {
         id: "predictive-maintenance",
         icon: "build",
-        text: "Predictive Maintenance",
+        text: "BLUEVISON Sensors",
         link: { name: "predictive-maintenance" }
       },
       {
         id: "energy-management",
         icon: "lightbulb_outline",
-        text: "Energy Management",
+        text: "MindConnect",
         link: { name: "energy-management" }
       },
       {
         id: "cybersecurity",
         icon: "lightbulb_outline",
-        text: "Cyber Security",
+        text: "MindConnect Nano",
         link: { name: "cybersecurity" }
       },
 

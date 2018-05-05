@@ -212,8 +212,8 @@ headers: [
         icon: "fas fa-stopwatch",
         title: "Processing Time",
         value: "17:00",
-        change: 0.2,
-        changeText: "above limit",
+        change: 40,
+        changeText: "below limit",
         formattedValue: function(val) {
           return "00:" + val + ":00";
         }
@@ -221,33 +221,33 @@ headers: [
       {
         id: 1,
         icon: "fa fa-random",
-        title: "SYSTEM THROUGH-PUT",
+        title: "THROUGHPUT",
         value: "1780",
-        change: 0.1,
-        changeText: "below expectation"
+        change: 18,
+        changeText: "of system capacity"
       },
       {
         id: 2,
         icon: "fa fa-cogs",
         title: "BAGS IN SYSTEM",
         value: 2250,
-        change: 0.7,
-        changeText: "below threshold"
+        change: 54,
+        changeText: "of system capacity"
       },
       {
         id: 3,
         icon: "fa fa-database",
         title: "EARLY BAG STORE",
         value: 6250,
-        change: -0.1,
-        changeText: "below threshold"
+        change: 72,
+        changeText: "of system capacity"
       },
       {
         id: 4,
         icon: "fas fa-angle-double-up",
         title: "DEPARTURE BAGS",
-        value: 250,
-        change: 0.1,
+        value: 251,
+        change: 0.9,
         changeText: "last 3 day average"
       },
       {
@@ -255,7 +255,7 @@ headers: [
         icon: "fas fa-angle-double-down",
         title: "Late Injected BAGS",
         value: 11,
-        change: 0.1,
+        change: -2,
         changeText: "last 3 day average"
       }
     ]
@@ -265,22 +265,19 @@ headers: [
   components: { KPITile, BarChart, Sankey, MultiLineChart },
   mounted: function() {
     this.timer = window.setInterval(() => {
-      /*
-      this.headKPIs[0].value += 1;
-      this.headKPIs[1].value += 2;
+      
+      let travelTimeTotal = 1020 + Math.round(Math.random() * 90) - 60;
+      let travelTimeSecounds =  travelTimeTotal % 60;
+      let travelTimeMinutes = (travelTimeTotal - travelTimeSecounds) / 60;
+      let travelTime = travelTimeMinutes +  (travelTimeSecounds < 10 ?  (":0" + travelTimeSecounds) :  (":" + travelTimeSecounds)) ;
+
+      this.headKPIs[0].value = travelTime;
+      this.headKPIs[1].value = 1700 + Math.round(Math.random() * 100) - 40 ;
       this.headKPIs[2].value += 3;
       this.headKPIs[3].value += 4;
       this.headKPIs[4].value += 5;
-      this.headKPIs[5].value += -1;
 
-      this.headKPIs[0].change = Math.round(Math.random() * 50 - 25) / 10;
-      this.headKPIs[1].change = Math.round(Math.random() * 50 - 25) / 10;
-      this.headKPIs[2].change = Math.round(Math.random() * 50 - 25) / 10;
-      this.headKPIs[3].change = Math.round(Math.random() * 50 - 25) / 10;
-      this.headKPIs[4].change = Math.round(Math.random() * 50 - 25) / 10;
-      this.headKPIs[5].change = Math.round(Math.random() * 50 - 25) / 10;
-      */
-    }, 10000);
+    }, 800);
   }
 };
 </script>
